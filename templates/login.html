@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <form method="post">
+    <table>
+      <tr>
+        <td>
+          Username
+        </td>
+        <td>
+          <input class="input" type="text" name="username" value={{username}}>
+          {{error}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Password
+        </td>
+        <td>
+          <input class="input" type="password" name="password">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input class="input" type="submit">
+        </td>
+      </tr>
+    </table>
+  </form>
+
+{% endblock %}

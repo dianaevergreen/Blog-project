@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <div id="table-div">
+    <form method="post">
+      <table>
+        <tr>
+          <td class="caption">
+              Username
+          </td>
+          <td>
+            <input class="input" type="text" name="username" value={{username}}>
+            {{user_error}}
+          </td>
+        </tr>
+        <tr>
+          <td class="caption">
+            Password
+          </td>
+          <td>
+            <input class="input" type="password" name="password" value="{{password}}">
+            {{password_error}}
+          </td>
+        </tr>
+        <tr>
+          <td class="caption">
+            Verify Password
+          </td>
+          <td >
+            <input class="input" type="password" name="verify" value="{{verify_password}}">
+            {{verification_error}}
+          </td>
+        </tr>
+        <tr>
+          <td class="caption">
+            Email(optional)
+          </td>
+          <td>
+            <input class="input" type="text" name="email" value="{{email}}">
+            {{email_error}}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input class="input" type="submit">
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+
+{% endblock %}

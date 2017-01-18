@@ -1,0 +1,141 @@
+
+body {
+    background-color: #2b2b2b;
+    font-family: Verdana;
+}
+
+hr {
+    border: 10px;
+    height: 5px;
+    background-color: #c63d0f;
+}
+
+table {
+    margin-left:auto;
+    margin-right:auto;
+    background-color: #c63d0f;
+    border-radius: 15px;
+}
+
+td {
+    padding: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+span, a {
+    color: #c63d0f;
+}
+
+.center-div{
+    margin: 0 auto;
+    width: 40%;
+    padding-bottom: 25px;
+}
+
+.input{
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-family: Verdana;
+    font-size: 14px;
+}
+
+.caption{
+    text-align: right;
+}
+
+.posts-div, #top-page {
+    background-color: white;
+}
+
+.label_color {
+    color: #c63d0f;
+    font-weight: bold;
+}
+
+.post_div {
+    color: #2b2b2b;
+    padding-bottom: 0px;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+    font-family: Verdana;
+    overflow: auto;
+}
+
+.subject_separator{
+    width: 73%;
+    margin-left: 0;
+}
+
+.posts-div {
+    width: 60%;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    min-height: 130px;
+}
+
+.welcome, #single_post {
+    color: white;
+    text-align: center;
+}
+
+.bold-title {
+    font-weight: bold;
+}
+
+.content_input {
+    height: 270px;
+}
+
+.content_input, #subject_input {
+    width: 100%;
+}
+
+.error_color {
+    color: red;
+}
+
+#login_area {
+    padding-left: 85%;
+    color: white;
+}
+
+#center_link {
+    padding-left: 6%;
+}
+
+#signup-title {
+    text-align: center;
+    color: #2b2b2b;
+}
+
+#links {
+    color: #2b2b2b;
+}
+
+#table-div {
+    overflow-x: auto;
+}
+
+#subject_input {
+    height: 20px;
+}
+
+#buttons_div{
+  float: right;
+  margin-right: 50px;
+}
+
+#likes_div {
+  padding-left: 10px;
+}
+
+#blog_link {
+    padding-left: 46%;
+}

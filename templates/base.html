@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Diana's Blog</title>
+    <link rel="stylesheet" type="text/css" href="/css/stylesheet.css">
+  </head>
+
+  <body>
+    <div id="top-page">
+      <hr>
+      <h1 id="signup-title">
+        <a href="/blog" id="links">Diana's Blog</a>
+      </h1>
+      <hr>
+    </div>
+    <div id="content">
+      <div id="login_area">
+        {% if user %}
+          {{user.name}} (<a class="login-link" href="/logout">logout</a>)
+        {% else %}
+          <a class="login-link" href="/login">login</a>
+          <a class="login-link" href="/signup">signup</a>
+        {% endif %}
+      </div>
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>

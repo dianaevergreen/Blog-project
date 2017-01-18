@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <div class= "posts-div">
+    <div class="post_div center-div">
+      {{post.subject.replace('\n', '<br>') | safe}}
+    </div>
+    <hr class ="subject_separator">
+    <div  class="post_div center-div">
+       {{post.content.replace('\n', '<br>') | safe}}
+    </div>
+    <div>
+      <div>
+        <form action="/blog/like/{{post.key().id()}}?action={{action}}" method="post">
+          <input type="submit" value={{action}}>
+        </form>
+        {{like_message}}
+      </div>
+
+      <div>
+        <form action="/blog/post/comment/{{post.key().id()}}">
+          <input type="submit" value="comment">
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h1 class="welcome">Comments</h1>
+    {% for c in comments|sort(attribute='created', reverse=True) %}
+      <div class= "posts-div">
+        <div>
+          <div class="post_div center-div">
+            <div class="post_div">
+              {{c.username}}
+            </div>
+            <div class="post_div">
+              {{c.created.strftime("%b %d, %Y")}}
+            </div>
+          </div>
+          <hr class ="subject_separator">
+        </div>
+        <div class = "content_div">
+          <div class="post_div center-div">
+            {{c.content.replace('\n', '<br>') | safe}}
+            <br>
+            <br>
+          </div>
+          <form action="/blog/comment/edit/{{c.key().id()}}">
+            <input type="submit" value="edit">
+          </form>
+          <form action="/blog/comment/delete/{{c.key().id()}}" method="POST">
+            <input type="submit" value="delete">
+          </form>
+          <div class="post_div error_color">
+            {%if comment_id == c.key().id()%}
+              {{error}}
+            {%endif%}
+          </div>
+        </div>
+      </div>
+    {%endfor%}
+  </div>
+
+{% endblock %}

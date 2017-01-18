@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <div>
+    <a class="bold-title" id="center_link" href="/blog/newpost">New post</a>
+    {% for post in posts|sort(attribute='created', reverse=True) %}
+      <div class= "posts-div">
+        <div>
+          <div class="post_div center-div bold-title">
+            {{post.subject}}
+          </div>
+          <div class="post_div center-div">
+            {{post.created.strftime("%b %d, %Y")}}
+          </div>
+          <hr class ="subject_separator">
+        </div>
+        <div class = "content_div">
+          <div class="post_div center-div">
+            {{post.content.replace('\n', '<br>')|safe}}
+            <br>
+            <br>
+            Author: {{post.username}}
+          </div>
+          <div id="buttons_div">
+            <form action="/blog/edit/{{post.key().id()}}">
+              <input type="submit" value="edit">
+            </form>
+            <form action="/blog/delete/{{post.key().id()}}" method="POST">
+              <input type="submit" value="delete">
+            </form>
+            <form action="/blog/readmore/{{post.key().id()}}">
+              <input type="submit" value="Read more">
+            </form>
+          </div>
+          <div id="likes_div">
+            Likes: {{post.likes|length}}
+          </div>
+          <div class="post_div error_color">
+            {%if post_id == post.key().id()%}
+              {{error}}
+            {%endif%}
+          </div>
+        </div>
+      </div>
+    {%endfor%}
+  </div>
+
+{% endblock %}

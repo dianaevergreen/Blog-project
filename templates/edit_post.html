@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+   <form action="/blog/edit/{{post_id}}?action=save" method="POST">
+    <div class="center-div">
+      <textarea class="input content_input" name="edition">
+        {{new_content}}
+      </textarea>
+    </div>
+    <div class="center-div">
+      <input type= "submit" value="save">
+    </div>
+  </form>
+
+  <form action="/blog/edit/{{post_id}}?action=cancel" method="POST">
+    <div class="center-div">
+      <input type="submit" value="cancel">
+    </div>
+  </form>
+{% endblock %}
+
